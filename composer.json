@@ -1,6 +1,6 @@
 {
   "name": "esit/es_pageslogan",
-  "description": "Die Erweiterung erlaubt die Ausgabe eines Slogans pro Seite.",
+  "description": "Die Erweiterung erlaubt die Ausgabe eines Slogans pro Seite. Die Slogans werden im Seitenbaum vererbt, so dass nicht auf jeder Seite ein eigener Slogan eingegeben werden muss.",
   "version": "1.0.1",
   "keywords": ["contao", "page", "slogan"],
   "license": "LGPLv3",
@@ -13,6 +13,6 @@
     }
   ],
   "require": {
-    "php": "5.4.*"
+    "php": ">=5.4.*"
   }
 }
