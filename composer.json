@@ -3,6 +3,7 @@
   "description": "Die Erweiterung erlaubt die Ausgabe eines Slogans pro Seite. Die Slogans werden im Seitenbaum vererbt, so dass nicht auf jeder Seite ein eigener Slogan eingegeben werden muss.",
   "keywords": ["contao", "page", "slogan"],
   "license": "LGPL-3.0",
+  "type": "contao-module",
   "authors": [
     {
       "name": "Patrick Froch",
