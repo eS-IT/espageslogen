@@ -28,8 +28,8 @@
      */
 
 $GLOBALS['TL_DCA']['tl_page']['palettes']['regular']    = str_replace('description;', 'description;{legend_pageslogan}, slogan;', $GLOBALS['TL_DCA']['tl_page']['palettes']['regular']);
-$GLOBALS['TL_DCA']['tl_page']['palettes']['error_403']    = str_replace('description;', 'description;{legend_pageslogan}, slogan;', $GLOBALS['TL_DCA']['tl_page']['palettes']['error_403']);
-$GLOBALS['TL_DCA']['tl_page']['palettes']['error_404']    = str_replace('description;', 'description;{legend_pageslogan}, slogan;', $GLOBALS['TL_DCA']['tl_page']['palettes']['error_404']);
+$GLOBALS['TL_DCA']['tl_page']['palettes']['error_403']  = str_replace('description;', 'description;{legend_pageslogan}, slogan;', $GLOBALS['TL_DCA']['tl_page']['palettes']['error_403']);
+$GLOBALS['TL_DCA']['tl_page']['palettes']['error_404']  = str_replace('description;', 'description;{legend_pageslogan}, slogan;', $GLOBALS['TL_DCA']['tl_page']['palettes']['error_404']);
 $GLOBALS['TL_DCA']['tl_page']['palettes']['root']       = str_replace('{dns_legend}', '{legend_pageslogan}, slogan;{dns_legend}', $GLOBALS['TL_DCA']['tl_page']['palettes']['root']);
 
 
@@ -39,8 +39,5 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['slogan'] = array
     'label'                   => &$GLOBALS['TL_LANG']['tl_page']['slogan'],
     'exclude'                 => true,
     'inputType'               => 'textarea',
-    'eval'                    => array('style'=>'height:60px;', 'tl_class'=>'clr')
+    'eval'                    => array('style'=>'height:60px;', 'tl_class'=>'clr', 'allowHtml' => true)
 );
-
-
-?>

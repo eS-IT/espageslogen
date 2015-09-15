@@ -38,7 +38,8 @@
  * @license     LGPL
  * @uses        Contao-Framework
  */
-class es_pageslogan extends Module{
+class es_pageslogan extends Module
+{
 
 
     /**
@@ -49,16 +50,48 @@ class es_pageslogan extends Module{
 
 
     /**
-     * Gibt den Slogan aus
+     * Generate the content element
      */
-    public function compile(){
-        global $objPage;
-        $this->Template->slogan = $this->getSlogan($objPage->id);
-
+    protected function compile()
+    {
+        if (TL_MODE == 'BE') {
+            $this->genBeOutput();
+        } else {
+            $this->genFeOutput();
+        }
     }
 
 
-    private function getSlogan($intId){
+    /**
+     * Erzeugt die Ausgebe für das Backend.
+     * @return string
+     */
+    private function genBeOutput()
+    {
+        $this->strTemplate          = 'be_wildcard';
+        $this->Template             = new BackendTemplate($this->strTemplate);
+        $this->Template->title      = $this->headline;
+        $this->Template->wildcard   = "### es_pageslogan ###";
+    }
+
+
+    /**
+     * Gibt den Slogan aus
+     */
+    public function genFeOutput()
+    {
+        global $objPage;
+        $this->Template->slogan = $this->getSlogan($objPage->id);
+    }
+
+
+    /**
+     * Sucht den Slogan der Seite und aller übergeordneten Seiten (bis der erste gefunden wurde).
+     * @param $intId
+     * @return string
+     */
+    private function getSlogan($intId)
+    {
         $this->import('Database', 'db');
         $query  = "SELECT `pid`, `slogan` FROM `tl_page` WHERE `id` = $intId";
         $result = $this->db->execute($query);
@@ -75,7 +108,7 @@ class es_pageslogan extends Module{
                 }
             }
         }
+
+        return '';
     }
 }
-
-?>
