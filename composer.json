@@ -12,6 +12,14 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0"
+    "php": ">=5.4.0",
+    "contao/core": ">=3.0.0 <4.0.0"
+  },
+  "extra": {
+    "contao": {
+      "sources": {
+        "TL_ROOT/system/modules/es_pageslogan": "system/modules/es_pageslogan"
+      }
+    }
   }
 }
