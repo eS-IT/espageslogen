@@ -39,5 +39,6 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['slogan'] = array
     'label'                   => &$GLOBALS['TL_LANG']['tl_page']['slogan'],
     'exclude'                 => true,
     'inputType'               => 'textarea',
-    'eval'                    => array('style'=>'height:60px;', 'tl_class'=>'clr', 'allowHtml' => true)
+    'eval'                    => array('style'=>'height:60px;', 'tl_class'=>'clr', 'allowHtml' => true),
+    'sql'                     => 'mediumtext NULL'
 );
